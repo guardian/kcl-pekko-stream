@@ -3,7 +3,7 @@ package com.contxt.kinesis
 import java.nio.ByteBuffer
 import java.time.Instant
 
-import akka.util.ByteString
+import org.apache.pekko.util.ByteString
 import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import software.amazon.awssdk.services.kinesis.model.EncryptionType

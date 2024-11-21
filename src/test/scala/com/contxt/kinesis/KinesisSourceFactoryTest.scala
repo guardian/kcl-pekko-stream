@@ -1,10 +1,10 @@
 package com.contxt.kinesis
 
-import akka.Done
-import akka.actor.ActorSystem
-import akka.stream.scaladsl.{Keep, Sink, Source}
-import akka.stream.{KillSwitches, Materializer, UniqueKillSwitch}
-import akka.testkit.TestKit
+import org.apache.pekko.Done
+import org.apache.pekko.actor.ActorSystem
+import org.apache.pekko.stream.scaladsl.{Keep, Sink, Source}
+import org.apache.pekko.stream.{KillSwitches, Materializer, UniqueKillSwitch}
+import org.apache.pekko.testkit.TestKit
 import org.scalamock.scalatest.MockFactory
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.concurrent.Eventually

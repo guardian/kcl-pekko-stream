@@ -4,9 +4,9 @@ import java.lang.Thread.UncaughtExceptionHandler
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.{Executors, ThreadFactory}
 
-import akka.stream.scaladsl.{Keep, MergeHub, Sink, Source}
-import akka.stream.{KillSwitch, KillSwitches, Materializer, OverflowStrategy}
-import akka.{Done, NotUsed}
+import org.apache.pekko.stream.scaladsl.{Keep, MergeHub, Sink, Source}
+import org.apache.pekko.stream.{KillSwitch, KillSwitches, Materializer, OverflowStrategy}
+import org.apache.pekko.{Done, NotUsed}
 import com.typesafe.config.{Config, ConfigFactory}
 import org.slf4j.LoggerFactory
 import software.amazon.awssdk.services.dynamodb.model.BillingMode

@@ -1,8 +1,8 @@
-# kcl-akka-stream
+# kcl-pekko-stream
 
-Akka Streaming Source backed by Kinesis Client Library (KCL 2.x).
+Pekko Streaming Source backed by Kinesis Client Library (KCL 2.x).
 
-This library combines the convenience of Akka Streams with KCL 2.x checkpoint management, failover, load-balancing,
+This library combines the convenience of Pekko Streams with KCL 2.x checkpoint management, failover, load-balancing,
 and re-sharding capabilities.
 
 This library is thoroughly tested and currently used in production.
@@ -11,7 +11,7 @@ This library is thoroughly tested and currently used in production.
 ## Installation
 
 ```
-libraryDependencies += "io.github.streetcontxt" %% "kcl-akka-stream" % "5.0.0"
+libraryDependencies += "com.gu" %% "kcl-pekko-stream" % "6.0.0"
 ```
 
 
@@ -21,8 +21,8 @@ Here are two simple examples on how to initialize the Kinesis consumer and liste
 
 The first example shows how to process Kinesis records in at-least-once fashion:
 ```scala
-import akka.actor.ActorSystem
-import akka.stream.scaladsl.Sink
+import org.apache.pekko.actor.ActorSystem
+import org.apache.pekko.stream.scaladsl.Sink
 import com.contxt.kinesis.{ConsumerConfig, KinesisSource}
 
 import scala.concurrent.Await
@@ -60,8 +60,8 @@ object Main {
 
 The second examples shows how to implement no-guarantees processing:
 ```scala
-import akka.actor.ActorSystem
-import akka.stream.scaladsl.Sink
+import org.apache.pekko.actor.ActorSystem
+import org.apache.pekko.stream.scaladsl.Sink
 import com.contxt.kinesis.{ConsumerConfig, KinesisSource}
 
 import scala.concurrent.Await
@@ -108,7 +108,7 @@ after failing to process a record, and not marking it as processed, then no furt
 eventually causing the system to run out of memory.
 
 ## Consumer Configuration
-The Kinesis Consumer `ConsumerConfig` can be configured via HOCON configuration, which is common for Akka projects
+The Kinesis Consumer `ConsumerConfig` can be configured via HOCON configuration, which is common for Pekko projects
 ```hocon
 com.contxt.kinesis {
   consumer {

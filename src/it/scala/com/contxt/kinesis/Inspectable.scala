@@ -2,9 +2,9 @@ package com.contxt.kinesis
 
 import java.util.concurrent.ConcurrentLinkedQueue
 
-import akka.stream.scaladsl.Sink
-import akka.stream.stage.{GraphStageLogic, GraphStageWithMaterializedValue, InHandler}
-import akka.stream.{Attributes, Inlet, SinkShape}
+import org.apache.pekko.stream.scaladsl.Sink
+import org.apache.pekko.stream.stage.{GraphStageLogic, GraphStageWithMaterializedValue, InHandler}
+import org.apache.pekko.stream.{Attributes, Inlet, SinkShape}
 import org.scalatest.concurrent.Eventually._
 import software.amazon.kinesis.exceptions.ThrottlingException
 

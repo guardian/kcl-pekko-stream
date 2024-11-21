@@ -9,7 +9,7 @@ ThisBuild / licenses  += ("Apache-2.0", url("https://www.apache.org/licenses/LIC
 
 name := "kcl-pekko-stream"
 
-val AkkaVersion = "2.6.16"
+val PekkoVersion = "1.1.2"
 
 val slf4j = "org.slf4j" % "slf4j-api" % "1.7.32"
 val logback = "ch.qos.logback" % "logback-classic" % "1.2.5"
@@ -19,16 +19,16 @@ val scalaKinesisProducer = "io.github.streetcontxt" %% "kpl-scala" % "2.0.0"
 val scalaCollectionCompat = "org.scala-lang.modules" %% "scala-collection-compat" % "2.5.0"
 val scalaTest = "org.scalatest" %% "scalatest" % "3.2.9"
 val scalaMock = "org.scalamock" %% "scalamock" % "5.1.0"
-val akkaStream = "com.typesafe.akka" %% "akka-stream" % AkkaVersion
-val akkaStreamTestkit = "com.typesafe.akka" %% "akka-stream-testkit" % AkkaVersion
+val pekkoStream = "org.apache.pekko" %% "pekko-stream" % PekkoVersion
+val pekkoStreamTestkit = "org.apache.pekko" %% "pekko-stream-testkit" % PekkoVersion
 
 libraryDependencies ++= Seq(
-  akkaStream,
+  pekkoStream,
   amazonKinesisClient,
   slf4j,
   scalaCollectionCompat,
   scalaTest % TestAndIntegrationTest,
-  akkaStreamTestkit % TestAndIntegrationTest,
+  pekkoStreamTestkit % TestAndIntegrationTest,
   logback % TestAndIntegrationTest,
   amazonKinesisProducer % TestAndIntegrationTest,
   scalaMock % Test

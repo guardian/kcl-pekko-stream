@@ -1,8 +1,8 @@
 package com.contxt.kinesis
 
-import akka.NotUsed
-import akka.stream._
-import akka.stream.scaladsl.{Flow, Keep, Merge, RunnableGraph, Sink, Source}
+import org.apache.pekko.NotUsed
+import org.apache.pekko.stream._
+import org.apache.pekko.stream.scaladsl.{Flow, Keep, Merge, RunnableGraph, Sink, Source}
 import org.scalatest.Tag
 import org.scalatest.concurrent.Eventually._
 

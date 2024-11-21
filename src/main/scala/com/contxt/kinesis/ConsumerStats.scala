@@ -1,6 +1,6 @@
 package com.contxt.kinesis
 
-import akka.stream.QueueOfferResult
+import org.apache.pekko.stream.QueueOfferResult
 import com.typesafe.config.Config
 import org.slf4j.LoggerFactory
 import software.amazon.kinesis.lifecycle.ShutdownReason
