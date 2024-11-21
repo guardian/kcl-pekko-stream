@@ -1,4 +1,4 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
 case class ShardConsumerId(streamName: String, applicationName: String, shardId: String)
 

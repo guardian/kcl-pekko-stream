@@ -1,7 +1,4 @@
-package com.contxt.kinesis
-
-import java.text.DateFormat
-import java.util.UUID
+package com.gu.kinesis
 
 import com.typesafe.config.Config
 import software.amazon.awssdk.services.cloudwatch.CloudWatchAsyncClient
@@ -12,6 +9,9 @@ import software.amazon.kinesis.coordinator.CoordinatorConfig
 import software.amazon.kinesis.leases.LeaseManagementConfig
 import software.amazon.kinesis.metrics.MetricsConfig
 import software.amazon.kinesis.retrieval.RetrievalConfig
+
+import java.text.DateFormat
+import java.util.UUID
 
 case class ConsumerConfig(
     streamName: String,

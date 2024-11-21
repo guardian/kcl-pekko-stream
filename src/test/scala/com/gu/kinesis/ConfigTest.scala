@@ -1,4 +1,4 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
 import com.typesafe.config.ConfigFactory
 import org.scalamock.scalatest.MockFactory
@@ -34,7 +34,7 @@ class ConfigTest extends AnyWordSpec with Matchers with MockFactory {
         ConfigFactory
           .load()
           .getConfig(
-            "com.contxt.kinesis.consumer"
+            "com.gu.kinesis.consumer"
           )
 
       // verify fromConfig also accepts implicits

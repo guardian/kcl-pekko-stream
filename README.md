@@ -23,7 +23,7 @@ The first example shows how to process Kinesis records in at-least-once fashion:
 ```scala
 import org.apache.pekko.actor.ActorSystem
 import org.apache.pekko.stream.scaladsl.Sink
-import com.contxt.kinesis.{ConsumerConfig, KinesisSource}
+import com.gu.kinesis.{ConsumerConfig, KinesisSource}
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
@@ -62,7 +62,7 @@ The second examples shows how to implement no-guarantees processing:
 ```scala
 import org.apache.pekko.actor.ActorSystem
 import org.apache.pekko.stream.scaladsl.Sink
-import com.contxt.kinesis.{ConsumerConfig, KinesisSource}
+import com.gu.kinesis.{ConsumerConfig, KinesisSource}
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
@@ -110,7 +110,7 @@ eventually causing the system to run out of memory.
 ## Consumer Configuration
 The Kinesis Consumer `ConsumerConfig` can be configured via HOCON configuration, which is common for Pekko projects
 ```hocon
-com.contxt.kinesis {
+com.gu.kinesis {
   consumer {
     application-name = "test-app" # name of the application (consumer group)
     stream-name = "test-stream" # name of the stream to connect to
@@ -120,10 +120,10 @@ com.contxt.kinesis {
       time = "" # Only required if position is at-timestamp. Supports a valid Java Date parseable datetime string
     }
 
-    # Note: Configurations below need to be in this location (com.contxt.kinesis.consumer) to be found
+    # Note: Configurations below need to be in this location (com.gu.kinesis.consumer) to be found
 
-    # Optional stats reporting class that implements com.contxt.kinesis.ConsumerStats
-    stats-class-name = "com.contxt.kinesis.NoopConsumerStats" 
+    # Optional stats reporting class that implements com.gu.kinesis.ConsumerStats
+    stats-class-name = "com.gu.kinesis.NoopConsumerStats" 
 
     # Optional checkpoint configuration
     shard-checkpoint-config {
@@ -137,7 +137,7 @@ com.contxt.kinesis {
 
 Then configure the consumer using the convenience method `ConsumerConfig.fromConfig`.
 ```scala
-ConsumerConfig.fromConfig(system.settings.config.getConfig("com.contxt.kinesis.consumer"))
+ConsumerConfig.fromConfig(system.settings.config.getConfig("com.gu.kinesis.consumer"))
 ```
 
 The `ConsumerConfig` class also has methods for accepting raw AWS SDK clients which can be configured. 

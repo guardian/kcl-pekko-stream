@@ -1,4 +1,4 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
 import org.apache.pekko.actor.ActorSystem
 import org.apache.pekko.stream.Materializer

@@ -1,7 +1,7 @@
 /*
  *  Taken from https://github.com/StreetContxt/kpl-scala/tree/master/src/main/scala/com/contxt/kinesis
  */
-package com.contxt.kinesis
+package com.gu.kinesis
 
 import com.amazonaws.services.kinesis.producer.{ KinesisProducer, KinesisProducerConfiguration, UserRecordResult }
 import com.google.common.util.concurrent.ListenableFuture
@@ -128,7 +128,7 @@ object ProducerStats {
 
   def getInstance(config: Config): ProducerStats = {
     try {
-      val className = config.getString("com.contxt.kinesis.producer.stats-class-name")
+      val className = config.getString("com.gu.kinesis.producer.stats-class-name")
       Class.forName(className).newInstance().asInstanceOf[ProducerStats]
     }
     catch {

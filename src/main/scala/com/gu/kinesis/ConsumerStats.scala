@@ -1,7 +1,7 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
-import org.apache.pekko.stream.QueueOfferResult
 import com.typesafe.config.Config
+import org.apache.pekko.stream.QueueOfferResult
 import org.slf4j.LoggerFactory
 import software.amazon.kinesis.lifecycle.ShutdownReason
 
@@ -32,7 +32,7 @@ object ConsumerStats {
 
   def getInstance(config: Config): ConsumerStats = {
     try {
-      val className = config.getString("com.contxt.kinesis.consumer.stats-class-name")
+      val className = config.getString("com.gu.kinesis.consumer.stats-class-name")
       Class.forName(className).getDeclaredConstructor().newInstance().asInstanceOf[ConsumerStats]
     } catch {
       case NonFatal(e) =>

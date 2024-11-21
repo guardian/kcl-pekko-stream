@@ -1,6 +1,4 @@
-package com.contxt.kinesis
-
-import java.time.Instant
+package com.gu.kinesis
 
 import org.apache.pekko.Done
 import org.apache.pekko.util.ByteString
@@ -8,6 +6,7 @@ import org.scalatest.matchers.should.Matchers
 import org.scalatest.wordspec.AnyWordSpec
 import software.amazon.awssdk.services.kinesis.model.EncryptionType
 
+import java.time.Instant
 import scala.concurrent.duration._
 import scala.concurrent.{Await, TimeoutException}
 

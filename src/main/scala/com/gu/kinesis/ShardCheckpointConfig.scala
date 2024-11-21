@@ -1,4 +1,4 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
 import com.typesafe.config.Config
 
@@ -12,7 +12,7 @@ case class ShardCheckpointConfig(
 
 object ShardCheckpointConfig {
   def apply(config: Config): ShardCheckpointConfig = {
-    val localConfig = config.getConfig("com.contxt.kinesis.consumer.shard-checkpoint-config")
+    val localConfig = config.getConfig("com.gu.kinesis.consumer.shard-checkpoint-config")
     ShardCheckpointConfig(
       checkpointPeriod = localConfig.getDuration("checkpoint-period").toMillis.millis,
       checkpointAfterProcessingNrOfRecords = localConfig.getInt("checkpoint-after-processing-nr-of-records"),

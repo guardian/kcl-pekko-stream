@@ -1,4 +1,4 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
 import org.apache.pekko.Done
 import org.apache.pekko.actor.ActorSystem

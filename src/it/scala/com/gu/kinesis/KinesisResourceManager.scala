@@ -1,4 +1,4 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
 import com.amazonaws.AmazonServiceException
 import org.scalatest.concurrent.Eventually._

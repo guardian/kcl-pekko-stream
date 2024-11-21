@@ -1,12 +1,11 @@
-package com.contxt.kinesis
-
-import java.time.Instant
+package com.gu.kinesis
 
 import org.apache.pekko.Done
 import org.apache.pekko.util.ByteString
 import software.amazon.awssdk.services.kinesis.model.EncryptionType
 import software.amazon.kinesis.retrieval.KinesisClientRecord
 
+import java.time.Instant
 import scala.concurrent.{Future, Promise}
 
 case class KinesisRecord(

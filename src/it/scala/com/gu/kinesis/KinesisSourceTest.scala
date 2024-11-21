@@ -1,10 +1,10 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
 import org.apache.pekko.actor.ActorSystem
 import org.apache.pekko.stream._
 import org.apache.pekko.stream.scaladsl._
 import org.apache.pekko.testkit.TestKit
-import com.contxt.kinesis.MessageUtil._
+import MessageUtil._
 import org.scalatest._
 import org.scalatest.concurrent.Eventually
 import org.scalatest.concurrent.Eventually._

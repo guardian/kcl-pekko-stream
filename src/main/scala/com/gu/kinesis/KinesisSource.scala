@@ -1,13 +1,9 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
-import java.lang.Thread.UncaughtExceptionHandler
-import java.util.concurrent.atomic.AtomicInteger
-import java.util.concurrent.{Executors, ThreadFactory}
-
+import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.pekko.stream.scaladsl.{Keep, MergeHub, Sink, Source}
 import org.apache.pekko.stream.{KillSwitch, KillSwitches, Materializer, OverflowStrategy}
 import org.apache.pekko.{Done, NotUsed}
-import com.typesafe.config.{Config, ConfigFactory}
 import org.slf4j.LoggerFactory
 import software.amazon.awssdk.services.dynamodb.model.BillingMode
 import software.amazon.kinesis.common.ConfigsBuilder
@@ -16,6 +12,9 @@ import software.amazon.kinesis.processor.{ShardRecordProcessor, ShardRecordProce
 import software.amazon.kinesis.retrieval.RetrievalConfig
 import software.amazon.kinesis.retrieval.polling.PollingConfig
 
+import java.lang.Thread.UncaughtExceptionHandler
+import java.util.concurrent.atomic.AtomicInteger
+import java.util.concurrent.{Executors, ThreadFactory}
 import scala.concurrent.{ExecutionContext, Future, Promise}
 import scala.util.Try
 import scala.util.control.NonFatal

@@ -1,4 +1,4 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
 import org.apache.pekko.stream._
 import org.apache.pekko.stream.scaladsl._

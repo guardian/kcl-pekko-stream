@@ -1,4 +1,4 @@
-package com.contxt.kinesis
+package com.gu.kinesis
 
 import org.apache.pekko.NotUsed
 import org.apache.pekko.stream._
