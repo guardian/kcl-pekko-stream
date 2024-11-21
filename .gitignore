@@ -1,6 +1,4 @@
-/target
-project/target/
-project/project/target/
+target
 /.bsp/
 .idea
 *.class
@@ -8,4 +6,4 @@ project/project/target/
 
 .bloop
 .metals
-project/metals.sbt
+metals.sbt
