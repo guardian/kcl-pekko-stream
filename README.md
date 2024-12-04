@@ -1,5 +1,11 @@
 # kcl-pekko-stream
 
+> [!IMPORTANT]
+> This project is a maintenance fork of https://github.com/StreetContxt/kcl-akka-stream, for the usage of projects at [the Guardian](https://github.com/guardian).
+> The library has been migrated from akka-stream to pekko-stream, and will be kept up to date with the latest dependency versions.
+> Please note that beyond this and critical bugs, no feature work is currently planned, and patches are unlikely to be accepted.
+> Consumers who require new functionality are encouraged to create their own forks to suit their own requirements.
+
 Pekko Streaming Source backed by Kinesis Client Library (KCL 2.x).
 
 This library combines the convenience of Pekko Streams with KCL 2.x checkpoint management, failover, load-balancing,
@@ -11,7 +17,7 @@ This library is thoroughly tested and currently used in production.
 ## Installation
 
 ```
-libraryDependencies += "com.gu" %% "kcl-pekko-stream" % "6.0.0"
+libraryDependencies += "com.gu" %% "kcl-pekko-stream" % "0.1.0"
 ```
 
 
