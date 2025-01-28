@@ -25,7 +25,7 @@ val PekkoVersion = "1.1.2"
 
 val slf4j = "org.slf4j" % "slf4j-api" % "1.7.32"
 val logback = "ch.qos.logback" % "logback-classic" % "1.2.5"
-val amazonKinesisClient = "software.amazon.kinesis" % "amazon-kinesis-client" % "2.6.0"
+val amazonKinesisClient = "software.amazon.kinesis" % "amazon-kinesis-client" % "3.0.1"
 val amazonKinesisProducer = "com.amazonaws" % "amazon-kinesis-producer" % "0.12.11"
 val scalaCollectionCompat = "org.scala-lang.modules" %% "scala-collection-compat" % "2.5.0"
 val scalaTest = "org.scalatest" %% "scalatest" % "3.2.9"

@@ -7,6 +7,7 @@ import org.apache.pekko.{Done, NotUsed}
 import org.slf4j.LoggerFactory
 import software.amazon.awssdk.services.dynamodb.model.BillingMode
 import software.amazon.kinesis.common.ConfigsBuilder
+import software.amazon.kinesis.coordinator.CoordinatorConfig.ClientVersionConfig
 import software.amazon.kinesis.coordinator.Scheduler
 import software.amazon.kinesis.processor.{ShardRecordProcessor, ShardRecordProcessorFactory}
 import software.amazon.kinesis.retrieval.RetrievalConfig
@@ -110,6 +111,7 @@ object KinesisSource {
 
     val checkpointConfig = configsBuilder.checkpointConfig()
     val coordinatorConfig = config.coordinatorConfig.getOrElse(configsBuilder.coordinatorConfig())
+      .clientVersionConfig(ClientVersionConfig.CLIENT_VERSION_CONFIG_COMPATIBLE_WITH_2X)
     val leaseManagementConfig = config.leaseManagementConfig.getOrElse(
       configsBuilder
         .leaseManagementConfig()
