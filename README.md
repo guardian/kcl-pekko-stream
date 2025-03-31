@@ -6,9 +6,9 @@
 > Please note that beyond this and critical bugs, no feature work is currently planned, and patches are unlikely to be accepted.
 > Consumers who require new functionality are encouraged to create their own forks to suit their own requirements.
 
-Pekko Streaming Source backed by Kinesis Client Library (KCL 2.x).
+Pekko Streaming Source backed by Kinesis Client Library (KCL 3.x).
 
-This library combines the convenience of Pekko Streams with KCL 2.x checkpoint management, failover, load-balancing,
+This library combines the convenience of Pekko Streams with KCL 3.x checkpoint management, failover, load-balancing,
 and re-sharding capabilities.
 
 This library is thoroughly tested and currently used in production.
@@ -17,9 +17,10 @@ This library is thoroughly tested and currently used in production.
 ## Installation
 
 ```
-libraryDependencies += "com.gu" %% "kcl-pekko-stream" % "0.1.0"
+libraryDependencies += "com.gu" %% "kcl-pekko-stream" % "0.2.0"
 ```
 
+Migrating from kcl-akka-stream? Make sure to read [the notes below](#migrating-from-kcl-akka-stream).
 
 ## Usage
 
@@ -172,3 +173,32 @@ To run integration tests:
 * Set `KINESIS_TEST_REGION` environmental variable
 * Run `sbt it:test`
 * Cancelled tests will leave temporary Kinesis streams and DynamoDb tables prefixed with `deleteMe_`
+
+## Migrating from kcl-akka-stream
+
+If you're starting to use this library as a replacement for kcl-akka-stream,
+presumably as part of replacing your Akka usage with Pekko, you should take
+care to not just switch to the latest version. Versions v0.1.1 and later
+include an upgrade from Kinesis Library 2.x to 3.x, which require some non-code
+changes for a smooth upgrade. Suggested adoption steps are as follows:
+
+1. As part of your Akka to Pekko migration, replace kcl-akka-stream usage with
+   kcl-pekko-stream version **0.1.0**. This version is a simple replacement for
+   the final kcl-akka-stream version 4.1.1; aside from updating import paths,
+   you shouldn't need to make any significant code changes.
+2. Review the [AWS docs for a KCL upgrade from 2.x to
+   3.x](https://docs.aws.amazon.com/streams/latest/dev/kcl-migration-from-2-3.html),
+   especially steps 5 and 6, which you should perform before attempting the
+   upgrade. It is also worth reviewing the
+   [rollback](https://docs.aws.amazon.com/streams/latest/dev/kcl-migration-rollback.html)
+   and
+   [rollforward](https://docs.aws.amazon.com/streams/latest/dev/kcl-migration-rollforward.html)
+   docs, in case you encounter issues later in the migration.
+3. Upgrade to kcl-pekko-stream version **0.1.1**. This will upgrade your app to
+   KCL v3, but running in a mode which is compatible with workers still running
+   KCL v2, allowing for a rolling upgrade.
+4. If all is running well at this point, you can upgrade to kcl-pekko-stream
+   version **0.2.0**, which will switch KCL out of v2 compatibility mode. Note
+   that the AWS docs suggest not attempting to roll back from this state, so
+   make sure you've reviewed the app's behaviour on the previous version before
+   starting this.
