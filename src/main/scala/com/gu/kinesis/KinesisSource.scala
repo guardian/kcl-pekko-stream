@@ -172,9 +172,14 @@ private[kinesis] trait ManagedWorker {
 }
 
 private[kinesis] class ManagedKinesisWorker(private val worker: Scheduler) extends ManagedWorker {
+  private val log = LoggerFactory.getLogger(getClass)
   def run(): Unit = worker.run()
 
-  def shutdownAndWait(): Unit = worker.startGracefulShutdown().get
+  def shutdownAndWait(): Unit = {
+    worker.leaderDecider().releaseLeadershipIfHeld()
+    val completion = worker.startGracefulShutdown().get
+    log.info(s"Requested kcl worker shutdown and waited, got response $completion")
+  }
 }
 
 private[kinesis] class RecordProcessorFactoryImpl(
