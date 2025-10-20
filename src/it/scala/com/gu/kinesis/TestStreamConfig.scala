@@ -2,7 +2,6 @@ package com.gu.kinesis
 
 import java.util.UUID
 
-import com.amazonaws.services.kinesis.producer.KinesisProducerConfiguration
 import software.amazon.awssdk.auth.credentials.AwsCredentialsProvider
 import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.cloudwatch.CloudWatchAsyncClient
@@ -10,6 +9,7 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbAsyncClient
 import software.amazon.awssdk.services.kinesis.KinesisAsyncClient
 import software.amazon.kinesis.common.{InitialPositionInStream, InitialPositionInStreamExtended, KinesisClientUtil}
 import software.amazon.kinesis.coordinator.CoordinatorConfig
+import software.amazon.kinesis.producer.KinesisProducerConfiguration
 import software.amazon.kinesis.retrieval.RetrievalConfig
 import software.amazon.kinesis.retrieval.polling.PollingConfig
 

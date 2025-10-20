@@ -8,9 +8,7 @@
     </appender>
 
     <logger name="org.apache.pekko" level="WARN" />
-    <logger name="com.amazonaws.services.kinesis.metrics" level="OFF" />
-    <logger name="com.amazonaws.services.kinesis.metrics.impl.MetricsHelper" level="OFF" />
-    <logger name="com.amazonaws.services.kinesis.producer" level="OFF" />
+    <logger name="software.amazon.kinesis.producer" level="OFF" />
 
     <root level="INFO">
         <appender-ref ref="STDOUT" />

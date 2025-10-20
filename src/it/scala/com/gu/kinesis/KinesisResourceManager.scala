@@ -1,8 +1,8 @@
 package com.gu.kinesis
 
-import com.amazonaws.AmazonServiceException
 import org.scalatest.concurrent.Eventually._
 import software.amazon.awssdk.auth.credentials.DefaultCredentialsProvider
+import software.amazon.awssdk.awscore.exception.AwsServiceException
 import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient
 import software.amazon.awssdk.services.dynamodb.model.{
@@ -165,8 +165,8 @@ object KinesisResourceManager {
         val tableStatus = table.tableStatus()
         if (tableStatus == TableStatus.ACTIVE) return
       } catch {
-        case ase: AmazonServiceException =>
-          if (!ase.getErrorCode.equalsIgnoreCase("ResourceNotFoundException"))
+        case ase: AwsServiceException =>
+          if (!ase.awsErrorDetails.errorCode.equalsIgnoreCase("ResourceNotFoundException"))
             throw ase
       }
     }

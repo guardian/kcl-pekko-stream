@@ -4,7 +4,7 @@ import java.nio.ByteBuffer
 
 import org.apache.pekko.NotUsed
 import org.apache.pekko.stream.scaladsl._
-import com.amazonaws.services.kinesis.producer.{KinesisProducerConfiguration, UserRecordResult}
+import software.amazon.kinesis.producer.{KinesisProducerConfiguration, UserRecordResult}
 
 import scala.concurrent.Future
 import scala.language.implicitConversions

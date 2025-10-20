@@ -3,7 +3,7 @@
  */
 package com.gu.kinesis
 
-import com.amazonaws.services.kinesis.producer.{ KinesisProducer, KinesisProducerConfiguration, UserRecordResult }
+import software.amazon.kinesis.producer.{ KinesisProducer, KinesisProducerConfiguration, UserRecordResult }
 import com.google.common.util.concurrent.ListenableFuture
 import com.typesafe.config.{ Config, ConfigFactory }
 import java.nio.ByteBuffer
