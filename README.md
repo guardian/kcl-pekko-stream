@@ -164,11 +164,3 @@ for more details.
 
 Kinesis producer library **does not provide message ordering guarantees** at a reasonable throughput,
 see [this ticket](https://github.com/awslabs/amazon-kinesis-producer/issues/23) for more details.
-
-
-## Integration Tests
-To run integration tests:
-* Setup local AWS credentials (for example, via `~/.aws/credentials` file)
-* Set `KINESIS_TEST_REGION` environmental variable
-* Run `sbt it:test`
-* Cancelled tests will leave temporary Kinesis streams and DynamoDb tables prefixed with `deleteMe_`
