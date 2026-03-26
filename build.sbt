@@ -43,8 +43,18 @@ libraryDependencies ++= Seq(
   scalaMock % Test
 )
 
+val jacksonVersion = "2.21.1"
+val jacksonAnnotationsVersion = "2.21"
+
+val jacksonDependencies = Seq(
+  "com.fasterxml.jackson.core" % "jackson-core" % jacksonVersion,
+  "com.fasterxml.jackson.core" % "jackson-databind" % jacksonVersion,
+  "com.fasterxml.jackson.core" % "jackson-annotations" % jacksonAnnotationsVersion,
+)
+
 dependencyOverrides ++= Seq(
   "org.apache.avro" % "avro" % "1.11.4",
   "org.json" % "json" % "20231013",
-  "com.fasterxml.jackson.core" % "jackson-core" % "2.19.1",
 )
+
+dependencyOverrides ++= jacksonDependencies
