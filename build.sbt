@@ -22,7 +22,7 @@ releaseProcess := Seq[ReleaseStep](
 )
 
 val PekkoVersion = "1.1.2"
-val amazonSdkV2 = "2.44.13"
+val amazonSdkV2 = "2.54.0"
 
 val slf4j = "org.slf4j" % "slf4j-api" % "1.7.32"
 val logback = "ch.qos.logback" % "logback-classic" % "1.5.19"
