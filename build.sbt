@@ -76,5 +76,9 @@ libraryDependencies ++= Seq(
 dependencyOverrides ++= Seq(
   "org.apache.avro" % "avro" % "1.11.4",
   "org.json" % "json" % "20231013",
-  "com.fasterxml.jackson.core" % "jackson-core" % "2.19.1",
+  "org.apache.kafka" % "kafka-clients" % "3.9.2",
+  "com.fasterxml.jackson.core" % "jackson-core" % "2.21.7",
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.21.7",
+  "com.squareup.wire" % "wire-runtime" % "6.4.5",
+  "com.squareup.wire" % "wire-runtime-jvm" % "6.4.5",
 )
