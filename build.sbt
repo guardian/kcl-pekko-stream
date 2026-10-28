@@ -76,5 +76,5 @@ libraryDependencies ++= Seq(
 dependencyOverrides ++= Seq(
   "org.apache.avro" % "avro" % "1.11.4",
   "org.json" % "json" % "20231013",
-  "com.fasterxml.jackson.core" % "jackson-core" % "2.19.1",
+  "com.fasterxml.jackson.core" % "jackson-core" % "2.21.7",
 )
