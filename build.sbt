@@ -81,4 +81,7 @@ dependencyOverrides ++= Seq(
   "com.fasterxml.jackson.core" % "jackson-databind" % "2.21.7",
   "com.squareup.wire" % "wire-runtime" % "6.4.5",
   "com.squareup.wire" % "wire-runtime-jvm" % "6.4.5",
+  "com.google.guava" % "guava" % "33.8.0-jre",
+  "at.yawk.lz4" % "lz4-java" % "1.14.1",
+  "org.xerial.snappy" % "snappy-java" % "1.1.10.12"
 )
